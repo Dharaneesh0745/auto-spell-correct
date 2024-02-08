@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Correction</title>
+  </head>
+  <body style="background-color: orange">
+    <div style="margin-left: 600px">
+      <h1 style="font-family: Verdana, Geneva, Tahoma, sans-serif">
+        Auto Correction
+      </h1>
+      <p style="padding-bottom: 20px"></p>
+      <form action="/spell_check" method="post">
+        <label
+          style="font-family: Verdana, Geneva, Tahoma, sans-serif"
+          for="input_word"
+          >Enter a word:</label
+        >
+        <input
+          style="height: 30px; width: 150px; border-radius: 50px"
+          type="text"
+          id="input_word"
+          name="input_word"
+          required
+        />
+        <button type="submit">Check</button>
+      </form>
+      {% if input_word %}
+      <p>Input word: {{ input_word }}</p>
+      <p>Corrections:</p>
+      <ul>
+        {% for correction in corrections %}
+        <li>{{ correction[0] }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+  </body>
+</html>
