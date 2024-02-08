@@ -7,7 +7,7 @@ print(dir(re))
 
 app = Flask(__name__)
 
-final = "C:/Users/dhara.LAPTOP-VAF0SV4G/Downloads/final.txt"
+final = "D:/My Projects/Manicks Project/New folder/auto-spell-correct/final.txt"
 
 with open(final, 'r', encoding="utf8") as f:
     file_name_data = f.read()
